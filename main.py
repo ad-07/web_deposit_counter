@@ -20,20 +20,20 @@ def simulate(depo, salary, perc, promotion, investment, months, check):
     return balance
 # Заголовок
 
-st.title("Сколько ты накопишь?(или не накопишь))")
+st.title("Сколько ты накопишь?")
 # Текст
 st.write("Привет! Войди в средний класс")
 
 st.write("40 квадратов на члена семьи и две машины, одна из которых иномарка")
 st.header("Ввод данных")
 # Ввод текста
-depo = st.number_input("Сколько у тебя денег есть(не ноль же?)", min_value=0.0, value=0.0, step=10000.0)
+depo = st.number_input("Сколько у тебя денег есть?", min_value=0.0, value=0.0, step=10000.0)
 st.write("Вы ввели:", f"{depo:,.0f}".replace(",", " "))
-salary = st.number_input("Сколько ты зарабатываешь(янезарабат...)", min_value=0.0, value=0.0, step=1000.0)
+salary = st.number_input("Сколько ты зарабатываешь?", min_value=0.0, value=0.0, step=1000.0)
 st.write("Вы ввели:", f"{salary:,.0f}".replace(",", " "))
 perc = st.number_input("сколько процентов хочешь откладывать?", min_value=0.0, value=0.0, step=1.0)/100
-promotion = st.number_input("раз в год доход же повышаешь или нет? на сколько в среднем? (%)", min_value=0.0, value=0.0, step=0.1)/100
-investment = st.number_input("если че деньги надо вкладывать, сколько процентов имеешь в год? (%)", min_value=0.0, value=0.0, step=0.1) /100
+promotion = st.number_input("раз в год доход же повышаешь? на сколько в среднем? (%)", min_value=0.0, value=0.0, step=0.1)/100
+investment = st.number_input("Деньги надо вкладывать, сколько процентов получаешь в год? (%)", min_value=0.0, value=0.0, step=0.1) /100
 months = st.slider("Сколько месяцев копить будем?", 0, 500, 12)
 
 
@@ -74,7 +74,7 @@ final = balance[-1]  # итог совпадает с последним зна�
 formatted = f"{final:,.2f}".replace(",", " ").replace(".", ",")
 
 st.header("Результаты")
-if st.button("Ну сколько деняг?"):
+if st.button("сколько получится?"):
     st.success(f"{formatted} ₽!, нормально по идее")
 
 
